@@ -1,4 +1,4 @@
-package br.edu.ifrn.higeia;;
+package br.edu.ifrn.cafeteria;
 
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
