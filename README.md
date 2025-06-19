@@ -1,22 +1,10 @@
-## ☕️ Cafeteria 🍩
-
-# ☕ Sistema de Gestão para Cafeteria
+## ☕ Sistema de Gestão para Cafeteria 🍩
 
 ## 📝 Descrição do Projeto
 
 Este projeto propõe o desenvolvimento de um sistema web para apoiar a gestão de uma cafeteria temática com estilo americano e atmosfera acolhedora. A cafeteria oferece um cardápio variado com cafés especiais, donuts artesanais, milk-shakes, lanches e sobremesas. O sistema tem como objetivo facilitar o controle operacional e gerencial da cafeteria, promovendo eficiência no atendimento e organização interna.
 
-A proposta é desenvolvida como parte das atividades da disciplina **Programação para Internet**, permitindo aplicar na prática conceitos de desenvolvimento incremental e interativo com foco em soluções reais.
-
-
-## 🎯 Objetivos
-
-- Organizar digitalmente os principais processos da cafeteria;
-- Permitir o cadastro, edição e exclusão de produtos do cardápio;
-- Controlar o estoque de insumos e produtos;
-- Registrar pedidos de forma eficiente;
-- Implementar um programa de fidelidade para clientes frequentes;
-- Gerar relatórios gerenciais para apoio à tomada de decisões.
+A proposta é desenvolvida como parte das atividades da disciplina Programação para Internet, permitindo aplicar na prática conceitos de desenvolvimento incremental e interativo com foco em soluções reais.
 
 
 ## 🔁 Iteração I – Estrutura Inicial e Cadastro de Produtos
