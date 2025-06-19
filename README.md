@@ -1,4 +1,4 @@
-## Sistema de Gestão para 🧁 ❖C A F E T E R I A❖ ☕
+## Sistema de Gestão para 🧁 ❖ C A F E T E R I A ❖ ☕
 
 ## 📝 Descrição do Projeto
 
