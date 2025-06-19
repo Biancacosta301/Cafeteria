@@ -1,4 +1,4 @@
-## Cafeteria 
+## ☕️ Cafeteria 🍩
 
 A cafeteria oferece um ambiente acolhedor e funcional, com foco em um atendimento rápido e produtos de qualidade. Com um cardápio constantemente atualizado, busca atender diferentes preferências, oferecendo cafés, lanches e sobremesas.
 
