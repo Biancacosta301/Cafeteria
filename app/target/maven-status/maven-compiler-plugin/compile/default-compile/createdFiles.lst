@@ -1,0 +1,5 @@
+br\edu\ifrn\cafeteria\Application.class
+br\edu\ifrn\cafeteria\persistencia\repositorio\ProdutoRepository.class
+br\edu\ifrn\cafeteria\OlaSpringBoot.class
+br\edu\ifrn\cafeteria\web\controladores\ProdutoControler.class
+br\edu\ifrn\cafeteria\persistencia\modelo\Produto.class
