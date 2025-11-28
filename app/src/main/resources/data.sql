@@ -25,4 +25,4 @@ INSERT INTO produtos (nome, descricao, preco, quantidade_estoque, categoria_id, 
 
 ('Milkshake Morango', 'Feito com sorvete artesanal e calda.', 18.00, 15, 5, 'https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=600&q=80'),
 
-('Cupcake Blueberry', 'Massa fofinha com mirtilos frescos.', 7.50, 40, 3, 'https://imgs.search.brave.com/kSN1tDAZPyPqHxyJ245XlRFelIyVwAsnp01CZnGKVtE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y29va2luZ3dpdGht/eWtpZHMuY28udWsv/d3AtY29udGVudC91/cGxvYWRzLzIwMjQv/MDkvYmx1ZWJlcnJ5/LWN1cGNha2VzLTk4/LTU5NXgzOTcuanBn');
+('Cupcake Blueberry', 'Massa fofinha com mirtilos frescos.', 7.50, 40, 3, 'https://i.etsystatic.com/48059243/r/il/0eda51/7006902442/il_fullxfull.7006902442_hfvg.jpg');
