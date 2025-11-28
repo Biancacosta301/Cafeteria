@@ -1,0 +1,62 @@
+<nav th:fragment="navbar" class="navbar navbar-expand-lg sticky-top shadow-sm" style="background-color: #ffffff; border-bottom: 3px solid #DAA520;">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/" style="font-family: 'Brush Script MT', cursive; font-size: 2rem; color: #9370DB;">
+            ☕ Cafeteria Nascimento
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link fw-bold" href="/" style="color: #6A5ACD;">Início</a></li>
+                <li class="nav-item"><a class="nav-link fw-bold" href="/produtos" style="color: #6A5ACD;">Cardápio</a></li>
+                
+                <li class="nav-item ms-3 me-3">
+                    <a href="/carrinho" class="btn btn-sm rounded-pill fw-bold text-white d-flex align-items-center gap-2" style="background-color: #DAA520; border: none; padding: 6px 15px;">
+                        🛒 Carrinho
+                    </a>
+                </li>
+
+                <li class="nav-item border-start mx-2" style="height: 20px;"></li>
+
+                <li class="nav-item" th:if="${session.usuarioLogado == null}">
+                    <a href="/login" class="fw-bold text-decoration-none" style="color: #9370DB;">Entrar 💜</a>
+                </li>
+
+                <li class="nav-item dropdown" th:if="${session.usuarioLogado != null}">
+                    <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown" style="color: #9370DB;">
+                        Olá, <span th:text="${session.usuarioLogado.nome.split(' ')[0]}">Cliente</span>
+                    </a>
+                    
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow" style="min-width: 200px;">
+                        <li>
+                            <a class="dropdown-item" th:href="@{/usuarios/perfil}">👤 Meu Perfil</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" th:href="@{/meus-pedidos}">📦 Meus Pedidos</a>
+                        </li>
+                        
+                        <li th:if="${session.usuarioLogado.tipo == 'VENDEDOR'}"><hr class="dropdown-divider"></li>
+                        <li th:if="${session.usuarioLogado.tipo == 'VENDEDOR'}">
+                            <h6 class="dropdown-header text-warning fw-bold">Gerência</h6>
+                        </li>
+                        <li th:if="${session.usuarioLogado.tipo == 'VENDEDOR'}">
+                            <a class="dropdown-item" th:href="@{/produtos/admin}">🍩 Gerenciar Produtos</a>
+                        </li>
+                        <li th:if="${session.usuarioLogado.tipo == 'VENDEDOR'}">
+                            <a class="dropdown-item" th:href="@{/categorias}">📂 Gerenciar Categorias</a>
+                        </li>
+                        <li th:if="${session.usuarioLogado.tipo == 'VENDEDOR'}">
+                            <a class="dropdown-item" th:href="@{/estoque}">📋 Gerenciar Estoque</a>
+                        </li>
+                        
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger fw-bold" th:href="@{/logout}">🚪 Sair</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
