@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardápio - Cafeteria Nascimento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #FAFAFA; display: flex; flex-direction: column; min-height: 100vh;}
+        h2, h4 { font-family: 'Brush Script MT', cursive; color: #9370DB; }
+        .cat-link { display: block; padding: 12px; color: #6A5ACD; text-decoration: none; border-radius: 10px; margin-bottom: 5px; font-weight: 500; transition: 0.3s; }
+        .cat-link:hover, .cat-link.active { background-color: #9370DB; color: white; padding-left: 20px; }
+        .card-custom { border: none; border-radius: 15px; background: white; box-shadow: 0 5px 20px rgba(147, 112, 219, 0.1); transition: transform 0.3s; }
+        .card-custom:hover { transform: translateY(-5px); border-bottom: 3px solid #DAA520; }
+        .btn-gold { background-color: #DAA520; color: white; border-radius: 50px; font-weight: bold; border: none; width: 100%; }
+        .btn-gold:hover { background-color: #B8860B; color: white; }
+    </style>
+</head>
+<body>
+    <div th:replace="~{fragments/nav :: navbar}"></div>
+
+    <div class="container my-5 flex-grow-1">
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="bg-white p-4 rounded-4 shadow-sm border-0">
+                    <h4 class="mb-4" style="font-size: 2rem; color: #DAA520;">Categorias</h4>
+                    <a href="/produtos" class="cat-link" th:classappend="${categoriaAtiva == null} ? 'active'">🍴 Todos</a>
+                    <div th:each="cat : ${categorias}">
+                        <a th:href="@{/produtos(categoriaId=${cat.id})}" class="cat-link" th:classappend="${categoriaAtiva == cat.id} ? 'active'" th:text="${cat.nome}"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <h2 class="mb-4" style="font-size: 2.5rem;">Cardápio</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col" th:each="prod : ${produtos}">
+                        <div class="card card-custom h-100 p-3">
+                            <img th:src="${prod.imagem != null && !prod.imagem.isEmpty()} ? ${prod.imagem} : 'https://via.placeholder.com/150?text=Sem+Foto'" 
+                                 class="card-img-top rounded-3 mb-2" style="height: 180px; object-fit: cover;" 
+                                 onerror="this.src='https://via.placeholder.com/150?text=Erro'">
+                            
+                            <div class="card-body text-center d-flex flex-column p-0">
+                                <h5 class="card-title fw-bold" th:text="${prod.nome}" style="color: #6A5ACD;"></h5>
+                                <p class="text-muted small flex-grow-1" th:text="${prod.descricao}"></p>
+                                <h4 class="fw-bold my-3" style="color: #DAA520;">R$ <span th:text="${#numbers.formatDecimal(prod.preco, 1, 2, 'COMMA')}"></span></h4>
+                                <form action="/carrinho/adicionar" method="post">
+                                    <input type="hidden" name="produtoId" th:value="${prod.id}">
+                                    <input type="hidden" name="quantidade" value="1">
+                                    <button class="btn btn-gold">Adicionar 🛒</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
