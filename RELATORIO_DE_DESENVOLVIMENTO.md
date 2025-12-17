@@ -1,11 +1,5 @@
 # Relatório de Desenvolvimento do Sistema Cafeteria
 
-**Autor:** Manus AI
-**Data:** 17 de Dezembro de 2025
-**Repositório:** https://github.com/Biancacosta301/Cafeteria
-
----
-
 ## 1. Introdução
 
 O presente relatório detalha o projeto de desenvolvimento do **Sistema Cafeteria**, uma aplicação web desenhada para modernizar e otimizar a gestão de vendas, estoque e relacionamento com o cliente em estabelecimentos de pequeno e médio porte do setor de alimentação.
